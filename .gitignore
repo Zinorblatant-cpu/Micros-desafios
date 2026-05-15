@@ -1,0 +1,18 @@
+# Pastas das aulas
+aula */
+aula*
+
+# PDF do checkpoint
+*.pdf
+
+# Arquivos compilados Java
+*.class
+out/
+target/
+*.jar
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+*.eclipse
