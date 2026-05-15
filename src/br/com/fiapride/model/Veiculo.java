@@ -45,6 +45,10 @@ public class Veiculo {
         System.out.println("Placa atualizada para: " + this.placa);
     }
 
+    public double calcularAutonomia() {
+        return 0.0;
+    }
+
     public void exibirDados() {
         System.out.println("=== Veículo ===");
         System.out.println("Modelo: " + modelo);

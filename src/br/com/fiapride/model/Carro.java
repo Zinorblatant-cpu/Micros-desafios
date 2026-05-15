@@ -20,6 +20,11 @@ public class Carro extends Veiculo {
     }
 
     @Override
+    public double calcularAutonomia() {
+        return litrosTanque * 12.0;  // média de 12 km/L para carros
+    }
+
+    @Override
     public void exibirDados() {
         super.exibirDados();
         System.out.println("Portas: " + numeroPortas);

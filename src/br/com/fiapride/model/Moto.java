@@ -20,6 +20,11 @@ public class Moto extends Veiculo {
     }
 
     @Override
+    public double calcularAutonomia() {
+        return litrosTanque * 22.0;  // média de 22 km/L para motos
+    }
+
+    @Override
     public void exibirDados() {
         super.exibirDados();
         System.out.println("Tipo:   " + tipo);
