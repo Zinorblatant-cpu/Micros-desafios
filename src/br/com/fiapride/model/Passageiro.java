@@ -8,6 +8,20 @@ public class Passageiro {
     private double saldo;
     private boolean ativo;
 
+    // construtor padrão — passageiro começa ativo e sem saldo
+    public Passageiro() {
+        this.ativo = true;
+        this.saldo = 0.0;
+    }
+
+    // construtor customizado — delega ao padrão via this()
+    public Passageiro(String nome, String rm, String email) {
+        this();
+        setNome(nome);
+        setRm(rm);
+        setEmail(email);
+    }
+
     public String getNome() {
         return nome;
     }

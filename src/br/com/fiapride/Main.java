@@ -1,27 +1,34 @@
 package br.com.fiapride;
 
 import br.com.fiapride.model.Passageiro;
+import br.com.fiapride.model.Veiculo;
 
 public class Main {
 
     public static void main(String[] args) {
-        Passageiro passageiro = new Passageiro();
+        // construtor padrão + setters
+        Passageiro p1 = new Passageiro();
+        p1.setNome("Leonardo Lopes");
+        p1.setRm("565437");
+        p1.setEmail("leonardo@email.com");
+        p1.adicionarSaldo(80.0);
+        p1.exibirDados();
 
-        passageiro.setNome("Leonardo Lopes");
-        passageiro.setRm("565437");
-        passageiro.setEmail("leonardo@email.com");
-        passageiro.setAtivo(true);
-        passageiro.adicionarSaldo(80.0);
+        System.out.println();
 
-        passageiro.exibirDados();
+        // construtor customizado — usa this() internamente
+        Passageiro p2 = new Passageiro("Ana Lima", "654321", "ana@email.com");
+        p2.adicionarSaldo(150.0);
+        p2.exibirDados();
 
-        System.out.println("\n--- Testando validações dos setters ---");
-        passageiro.setNome("");           // nome inválido
-        passageiro.setEmail("semArroba"); // email inválido
-        passageiro.descontarSaldo(200.0); // saldo insuficiente
+        System.out.println();
 
-        System.out.println("\n--- Getters ---");
-        System.out.println("Nome via getter:  " + passageiro.getNome());
-        System.out.println("Saldo via getter: R$ " + passageiro.getSaldo());
+        // veículo — modelo imutável, placa via atualizarPlaca()
+        Veiculo veiculo = new Veiculo("ABC1D23", "Toyota Corolla", 2022);
+        veiculo.exibirDados();
+
+        System.out.println();
+        veiculo.atualizarPlaca("XYZ9A87");
+        veiculo.atualizarPlaca("123");  // placa inválida
     }
 }
