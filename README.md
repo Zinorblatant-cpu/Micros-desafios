@@ -3,9 +3,9 @@
 ## Informações do Aluno
 
 - **Nome:** Leonardo Lopes Oliveira
-- **RM:** [Seu RM]
-- **Turma:** [Sua Turma]
-- **Curso:** [Seu Curso]
+- **RM:** [565437]
+- **Turma:** [CCPW]
+- **Curso:** [Ciencia da Computação]
 - **GitHub:** [@Zinorblatant-cpu]
 
 ---

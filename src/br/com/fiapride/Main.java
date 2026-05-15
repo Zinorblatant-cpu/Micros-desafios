@@ -9,14 +9,18 @@ public class Main {
         passageiro.nome = "Leonardo Lopes";
         passageiro.rm = "123456";
         passageiro.email = "leonardo@email.com";
-        passageiro.saldo = 100.0;
+        passageiro.saldo = 50.0;
         passageiro.ativo = true;
 
-        System.out.println("=== FiapRide - Passageiro ===");
-        System.out.println("Nome:   " + passageiro.nome);
-        System.out.println("RM:     " + passageiro.rm);
-        System.out.println("Email:  " + passageiro.email);
-        System.out.println("Saldo:  R$ " + passageiro.saldo);
-        System.out.println("Ativo:  " + passageiro.ativo);
+        passageiro.exibirDados();
+
+        System.out.println("\n--- Testando métodos ---");
+        passageiro.adicionarSaldo(30.0);
+        passageiro.descontarSaldo(20.0);
+        passageiro.descontarSaldo(200.0);  // saldo insuficiente
+        passageiro.adicionarSaldo(-10.0);  // valor inválido
+
+        System.out.println("\n--- Dados finais ---");
+        passageiro.exibirDados();
     }
 }
