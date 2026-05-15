@@ -1,12 +1,14 @@
 package br.com.fiapride.model;
 
-public class Moto extends Veiculo {
+public class Moto extends Veiculo implements Rastreavel {
 
-    private String tipo;  // esportiva, custom, urbana
+    private String tipo;
     private double litrosTanque;
+    private double latitude;
+    private double longitude;
 
     public Moto(String placa, String modelo, int ano, String tipo, double litrosTanque) {
-        super(placa, modelo, ano);  // inicializa atributos privados da mãe
+        super(placa, modelo, ano);
         this.tipo = tipo;
         this.litrosTanque = litrosTanque;
     }
@@ -21,7 +23,20 @@ public class Moto extends Veiculo {
 
     @Override
     public double calcularAutonomia() {
-        return litrosTanque * 22.0;  // média de 22 km/L para motos
+        return litrosTanque * 22.0;
+    }
+
+    @Override
+    public void atualizarLocalizacao(double latitude, double longitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+        System.out.println("[" + getModelo() + "] GPS atualizado a cada "
+                + INTERVALO_ATUALIZACAO_SEGUNDOS + "s → " + obterLocalizacao());
+    }
+
+    @Override
+    public String obterLocalizacao() {
+        return "Lat: " + latitude + ", Long: " + longitude;
     }
 
     @Override
