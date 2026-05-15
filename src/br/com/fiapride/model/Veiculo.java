@@ -1,6 +1,6 @@
 package br.com.fiapride.model;
 
-public class Veiculo {
+public abstract class Veiculo {
 
     private String placa;
     private String modelo;
@@ -45,9 +45,8 @@ public class Veiculo {
         System.out.println("Placa atualizada para: " + this.placa);
     }
 
-    public double calcularAutonomia() {
-        return 0.0;
-    }
+    // contrato obrigatório — cada subclasse deve implementar seu próprio cálculo
+    public abstract double calcularAutonomia();
 
     public void exibirDados() {
         System.out.println("=== Veículo ===");
